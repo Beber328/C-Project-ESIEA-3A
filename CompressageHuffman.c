@@ -1,10 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// This constant can be avoided by explicitly
-// calculating height of Huffman Tree
-#define MAX_TREE_HT 100
-
 //Structure de l'arbre pour les noeuds
 struct noeuds
 {
@@ -180,9 +176,9 @@ void affichageCaractere(int arr[], int n)
     int i;
     for (i = 0; i < n; ++i)
     {
-        printf("%d", arr[i]);
+        printf("%d ", arr[i]);
     }
-    printf("\n");
+    //printf("\n");
 }
 
 // affichage du code à partir du tableau
@@ -205,7 +201,7 @@ void afficherCode(struct noeuds* fin, int arr[],int haut)///
     // on affiche le caractere et ça valeur
     if (branche(fin))
     {
-        printf("%c: ", fin->uneDonnee);
+        //printf("%c: ", fin->uneDonnee);
         affichageCaractere(arr, haut);
     }
 }
@@ -274,7 +270,13 @@ int main()
     {
         arr[i] = tableau2[i];
     }
+
+    printf("Le texte sous format compresse : \n");
+
     fonctionHuffman(arr,frequence,l);
+
+    //printf("%s\n",tableau);
 
     return 0;
 }
+
